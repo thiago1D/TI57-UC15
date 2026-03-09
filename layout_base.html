@@ -4,28 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>layout base</title>
+    
 
     <style>
+        /*setor universal */
+        *{
+            box-sizing: border-box;
+
+        }
     body{
+        
         margin: 0
         
     }
 
 header{
-     background-color: rgb(15, 34, 77);    
+     background-color: rgb(28, 43, 109);    
     padding: 0px;
     display: flex; 
 
     }        
 
 h1{
-    background-color: rgb(168, 151, 128);
+    background-color: rgb(173, 112, 14);
+    /* color: wheat; */
     margin: 0;
     margin:auto
 
+
  }
 
- img{ 
+ header img{ 
     height: 150px;
  }
 
@@ -45,23 +54,85 @@ h1{
 
  a{
     padding: 10px;
-    background-color: rgb(89, 187, 9);
+    background-color: rgb(103, 187, 33);
     display: block;
     text-align: center;
     text-decoration: none;
-    color: wheat;
+    color: rgb(116, 78, 8);
 
  }
 
  a:visited{
-    color: bisque;
+    color: rgb(31, 177, 155);
+
+
+
 
  }
  
+div{
+    display: flex;
+    /* color: rgb(13, 219, 151); */
+    
+    padding: 40px;
+    flex-wrap: nowrap;
+}
+
+main{
+    box-sizing: border-box;
+    padding: 20px;
+    width: 70%;
+}
 
 
+main img{
+    width: 100%;
+    max-width: 300px;
+    text-align: auto;
+    display: block;
+              
+}
+
+
+aside{
+    
+    padding-inline-start: 20px;
+    width: 30%;
+
+}
+
+
+.destaque{
+    color: blue;
+    
+}
+
+p#importante{
+    color: rgb(214, 7, 221);
+}
+
+footer{
+    background-color: rgb(19, 39, 58);
+    color: rgb(21, 239, 255);
+    text-align: end;
+    padding: 40px;
+    
+}
+
+/*media queries (consulta de midia) */
+@media (min-width:576) {
+    main{
+        width: 70%;
+    }
+    aside{
+        width: 30;
+    }
+
+}
 
     </style>
+
+    
 
 
 </head>
@@ -70,6 +141,13 @@ h1{
       <header>
         <img src="midias/imagem 2.jpg" alt="logo">
         <h1>layout base</h1>
+        <main>
+            <h1>
+                
+            </h1>
+        </main>
+
+        </h2>
     </header>
 
 
@@ -88,8 +166,42 @@ h1{
 
         </ul>
 
-    </div>    
-      
+    <div>
+        
+        <main>
+
+        <h1>conteudo principal</h1>
+
+            <img src="midias/imagem 3.jpg" alt="">
+            <p id="importante"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure culpa vitae maxime vel, itaque, magni doloribus commodi cupiditate fugiat, sunt blanditiis veniam illo hic officiis quod laudantium nostrum ipsum natus.</p>
+
+        </h1>
+        
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque facilis saepe, corrupti impedit nemo autem? Nobis nam dicta non laboriosam, possimus laborum maxime, officiis quos ratione laudantium perferendis iure praesentium.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, culpa labore deleniti cum voluptate non impedit possimus, aliquam suscipit vero dignissimos odit! Voluptate saepe modi hic, rem minus vel dolor?
+
+            </h1>
+            <p class="destaque">cLorem ipsum dolor sit amet consectetur adipisicing elit. Minima sequi nulla veritatis dolores harum veniam, quas, accusantium perspiciatis officia necessitatibus obcaecati amet? Atque, itaque! Quidem velit voluptas omnis assumenda excepturi!
+            
+
+            </p>
+            <p>
+        </main>
+            <aside>
+                <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt commodi cupiditate nemo adipisci eius iure! Quibusdam placeat molestias fugit officiis! Animi totam repudiandae inventore excepturi non aliquid similique natus deserunt.
+
+                </h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo, non similique. Asperiores deserunt modi laudantium reiciendis. Similique adipisci debitis aliquam explicabo, nisi alias nesciunt libero ducimus modi aliquid nostrum dignissimos.
+
+                </p>
+
+            </aside>
+    </div>   
+      <footer>
+       <p><p>ti57 - tecnico de informatica todos os direitos reservados </p>
+       
+       
+      </footer>
         
 
 
