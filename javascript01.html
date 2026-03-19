@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de JavaScript</title>
+</head>
+<body id="corpo">
+    <h1>Exemplos de JavaScript</h1>
+    <h2>Alterando o conteúdo de um elemento</h2>
+
+    <p id="mensagem01"></p>
+
+    <h3>Via seletor script</h3>
+        <script>
+            document.getElementById('mensagem01').innerText = 'Olá mundo!';
+        </script> 
+
+    <h3>Via atributo onclick</h3>
+        <button onclick="document.getElementById('mensagem01').innerText = 'Olá mundo via onclick!';">Clique aqui</button>
+
+    <h3>Via atributo função</h3>
+        <button onclick="exibirMensagem()">Clique aqui</button>
+
+        <script>
+            function exibirMensagem() {
+                document.getElementById('mensagem01').innerText = 'Olá mundo via função!';
+            }
+        </script>
+
+        <h3>Via arquivo externo</h3>
+        <button onclick="exibirMensagem2()">Clique aqui</button>
+        <script src="scripts.js"></script>
+
+        <h2>Alterando um atributo</h2>
+        <button onclick="Liga()">Liga</button>
+        <img src="midias/off.gif" alt="Lâmpada" id="lamp">
+        <button onclick="Desliga()">Desliga</button>
+
+        <script>
+            function Liga() {
+                document.getElementById('lamp').src = 'midias/on.gif';
+            }
+
+            function Desliga() {
+                document.getElementById('lamp').src = 'midias/off.gif';
+            }
+        </script>
+
+        <h2 id="titulo">Alterando a Formatação</h2>
+        <button onclick="formata()">Vermelho</button>
+        <script>
+            function formata() {
+                document.getElementById('titulo').style.color = 'red';
+                document.getElementById('titulo').style.backgroundColor = 'yellow';
+            }
+        </script>
+    <h3>Tema Escuro</h3>
+    <button id="escuroBtn" onclick="escuro()">Tema Escuro</button>
+    <button id="claroBtn" style="display: none;" onclick="claro()">Tema Claro</button>
+    <script>
+        function escuro(){
+            document.getElementById('corpo').style.backgroundColor = '#333333';
+            document.getElementById('corpo').style.color = 'white'; 
+            document.getElementById('escuroBtn').style.display = 'none';
+            document.getElementById('claroBtn').style.display = 'inline-block';
+        }
+
+        function claro(){
+            document.getElementById('corpo').style.backgroundColor = 'white';
+            document.getElementById('corpo').style.color = 'black';
+            document.getElementById('claroBtn').style.display = 'none';
+            document.getElementById('escuroBtn').style.display = 'inline-block';
+        }
+    </script>
+    
+</body>
+</html>

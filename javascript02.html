@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos JavaScript</title>
+</head>
+<body>
+    <h1>Mensagens via JavaScript</h1>
+    <h2>via inserção</h2>
+    <p id="msg01"></p>
+    <button onclick="document.getElementById('msg01').innerText = 'mensagem inserida via JavaScript'">Inserir Mensagem</button>
+
+    <h2>via alerta</h2>
+    <button onclick="alert('mensagem exibida via alerta')">Exibir Alerta</button>
+
+    <h2>via console</h2>
+    <button onclick="console.log('mensagem exibida via console')">Exibir no Console</button>
+
+    <h2>via escrita direta</h2>
+    <button onclick="document.write( 'mensagem escrita direta via JavaScript')">escrever Diretamente</button>
+
+   <h2>via prompt</h2>
+    <button onclick="prompt('Digite uma mensagem:')">Exibir Prompt</button>
+
+    <h1>variáveis em JavaScript</h1>
+    <button onclick="Mensagem()">Exibir variáveis</button>
+
+    <script>
+    var nome;
+
+        function Mensagem(){
+            
+            nome = prompt('Digite seu nome:');
+            alert("Bom Dia " + nome + "!");
+
+
+
+        }
+    </script>
+
+    <h1>desvio condicional</h1>
+    <button onclick="Mensagem2()">clique aqui</button>
+
+    <script>
+        function Mensagem2 () {
+
+            let nome;
+            let hora;
+            let msg;
+            nome = prompt('Digite seu nome:');
+            hora = prompt('Digite a hora atual:');
+            
+            if(hora < 12){ 
+               msg =" Bom dia "+ nome + "!";
+               
+               
+
+               } else {
+
+                msg = "boa tarde  " + nome + "!";
+
+
+               }
+
+               alert(msg)
+
+
+        }
+
+</script>        
+            
+
+        
+    
+
+        
+
+</body>
+</html>

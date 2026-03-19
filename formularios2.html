@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios</title>
+<style>
+    
+        
+
+    
+    
+</style>
+</head>
+<body>
+    <form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+        <fieldset>
+            <legend>dados pessoais</legend>
+            <label for="nome">nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="nome" required>
+        <br>
+        <label for="email">email:</label>
+        <input type="email" name="email" id="email" required>
+            <br>
+
+             <input type="radio" name="tipo" id="aluno" value= aluno required>
+            <label for="aluno">aluno</label>
+            
+            <input type="radio" name="tipo" id="professor" value="professor">
+            <label for="professor">professor</label>
+            <br>
+        </fieldset>
+
+        <fieldset>
+            <legend>dados de acessos</legend>
+            <input type="radio" name="tipo" id="aluno" value= aluno required>
+            <label for="aluno">aluno</label>
+            
+            <input type="radio" name="tipo" id="professor" value="professor">
+            <label for="professor">professor</label>
+            <br>
+            
+            <br>
+            <label for="senha">senha:</label>
+            <input type="password" name="senha" id="senha" required>
+            <br>
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>informaçao adicionais</legend>
+              <select name="nivel" id="nivel" required>
+            <option value="">escolha seu nive</option>
+
+            <option value="iniciante">iniciante</option>
+            <option value="intermediario">intermediario</option>
+            <option value="avancado">avançado </option>
+            </select>
+            <br>
+        
+            <textarea name="msg" id="msg" placeholder="digita sua mensagem aqui.."></textarea>
+            <br>
+
+            <input type="checkbox" name="promo" id="promo" value="sim" checked>
+            <label for="promo"> desejo receber promoçao</label>
+            <br>
+            
+
+        </fieldset>
+<input type="submit" value="cadastrar">
+
+
+
+            
+           
+            
+            <input type="checkbox" name="promo" id="promo" value="sim" checked>
+            <label for="promo"> desejo receber promoçao</label>
+            <br>
+            
+            <select name="nivel" id="nivel" required>
+            <option value="">escolha seu nive</option>
+
+            <option value="iniciante">iniciante</option>
+            <option value="intermediario">intermediario</option>
+            <option value="avancado">avançado </option>
+            </select>
+            <br>
+            <textarea name="msg" id="msg" placeholder="digita sua mensagem aqui.."></textarea>
+            <br>
+
+            <input type="reset" value="limpar">
+            
+
+<input type="submit" value="cadastrar">
+        
+        
+        
+
+
+    </form>
+</body>
+</html>
