@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImobiTech Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="imobiliario.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo-container">
+            <i class="fa-solid fa-building-columns"></i>
+            <div class="logo-text">ImobiTech <span>Manager</span></div>
+        </div>
+        <nav class="nav-menu">
+            <div class="nav-item tab-btn active" data-target="tab-dashboard"><i class="fa-solid fa-chart-simple"></i> Dashboard</div>
+            <div class="nav-item tab-btn" data-target="tab-predios"><i class="fa-solid fa-building"></i> Prédios e APs</div>
+            <div class="nav-item tab-btn" data-target="tab-moradores"><i class="fa-solid fa-users"></i> Moradores</div>
+            <div class="nav-item tab-btn" data-target="tab-contratos"><i class="fa-solid fa-file-invoice-dollar"></i> Contratos / Vendas</div>
+            <div class="nav-item tab-btn" data-target="tab-logs"><i class="fa-solid fa-clipboard-list"></i> Logs do Sistema</div>
+            <div class="nav-item sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</div>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        
+        <div id="tab-dashboard" class="tab-content active">
+            <h2 class="header-title">Dashboard Geral</h2>
+            <p class="header-subtitle">Métricas consolidadas e desempenho financeiro em tempo real.</p>
+            
+            <div class="dash-grid">
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span>Vendas Totais</span>
+                        <i class="fa-solid fa-wallet" style="color: #22c55e;"></i>
+                    </div>
+                    <div class="dash-card-value">R$ 20.895.000</div>
+                    <div class="dash-card-sub" style="color: #22c55e;"><i class="fa-solid fa-arrow-up"></i> +12% este mês</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span>Unidades Vendidas</span>
+                        <i class="fa-solid fa-key" style="color: #3b82f6;"></i>
+                    </div>
+                    <div class="dash-card-value">50 / 120</div>
+                    <div class="dash-card-sub">41.6% de ocupação global</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span>Clientes Ativos</span>
+                        <i class="fa-solid fa-user-check" style="color: #a855f7;"></i>
+                    </div>
+                    <div class="dash-card-value">50</div>
+                    <div class="dash-card-sub">Nenhum contrato inadimplente</div>
+                </div>
+                <div class="dash-card">
+                    <div class="dash-card-header">
+                        <span>Ticket Médio</span>
+                        <i class="fa-solid fa-chart-line" style="color: #eab308;"></i>
+                    </div>
+                    <div class="dash-card-value">R$ 417.900</div>
+                    <div class="dash-card-sub">Valor médio por unidade</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-predios" class="tab-content">
+            <h2 class="header-title">Estrutura de Empreendimentos</h2>
+            <p class="header-subtitle">Gerenciamento de blocos edilícios, status de obras e unidades.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Empreendimento</th>
+                            <th>Localização</th>
+                            <th>Total Unidades</th>
+                            <th>Vendidas</th>
+                            <th>Disponíveis</th>
+                            <th>Status da Obra</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-predios-corpo">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="tab-moradores" class="tab-content">
+            <h2 class="header-title">Carteira Imobiliária - Relatório de Clientes</h2>
+            <p class="header-subtitle">Clique sobre a linha do cliente para inspecionar os dados contratuais e pessoais.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do Cliente</th>
+                            <th>CPF</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Estado Civil</th>
+                            <th>Imóvel / Alocação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-clientes-corpo">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="tab-contratos" class="tab-content">
+            <h2 class="header-title">Registro de Auditoria de Contratos</h2>
+            <p class="header-subtitle">Histórico financeiro formal, datas de assinatura e condições de faturamento.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cód. Contrato</th>
+                            <th>Comprador</th>
+                            <th>Imóvel / Unidade</th>
+                            <th>Valor Total</th>
+                            <th>Método Pagamento</th>
+                            <th>Data Assinatura</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-contratos-corpo">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="tab-logs" class="tab-content">
+            <h2 class="header-title">Logs de Auditoria e Segurança</h2>
+            <p class="header-subtitle">Rastreamento completo das ações administrativas realizadas dentro da plataforma.</p>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>Usuário</th>
+                            <th>Módulo</th>
+                            <th>Ação Executada</th>
+                            <th>Endereço IP</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-logs-corpo">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-cliente">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <div class="avatar-circle" id="modal-avatar">--</div>
+                    <div>
+                        <span id="modal-nome" style="display:block; font-size:16px; font-weight: 600; color:#ffffff;">Nome Completo</span>
+                        <small id="modal-id" style="color:#64748b; font-family:monospace;">#000</small>
+                    </div>
+                </div>
+                <button class="btn-fechar" id="fechar-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="secao-interna-titulo">Dados Pessoais</div>
+                <div class="info-grid">
+                    <div class="info-box"><label>CPF</label><p id="modal-cpf">000.000.000-00</p></div>
+                    <div class="info-box"><label>Estado Civil</label><p id="modal-civil">Solteiro</p></div>
+                    <div class="info-box"><label>E-mail</label><p id="modal-email">usuario@provedor.com</p></div>
+                    <div class="info-box"><label>Telefone Celular</label><p id="modal-telefone">(00) 00000-0000</p></div>
+                </div>
+
+                <div class="secao-interna-titulo">Contrato de Aquisição Imobiliária</div>
+                <div class="info-grid">
+                    <div class="info-box"><label>Empreendimento</label><p id="modal-imovel">Nome do Residencial</p></div>
+                    <div class="info-box"><label>Unidade</label><p><span class="badge-unidade" id="modal-unidade">AP --</span></p></div>
+                    <div class="info-box"><label>Valor de Compra</label><p id="modal-valor" style="color:#22c55e; font-weight:600;">R$ 0,00</p></div>
+                    <div class="info-box"><label>Modalidade / Banco Financiador</label><p id="modal-banco">Financiamento / Caixa</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DATASET PRINCIPAL DE CLIENTES (USADO EM MORADORES E CONTRATOS)
+        const dadosClientes = [
+            { id: "#001", nome: "Mariana Silva", cpf: "101.313.442-11", email: "mariana.silva@email.com", tel: "(11) 98451-0001", civil: "Solteiro(a)", imovel: "Residencial Bella Vista", unidade: "AP 101", valor: 340000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "12/01/2026" },
+            { id: "#002", nome: "Carlos Eduardo", cpf: "102.314.443-12", email: "carlos.eduardo@email.com", tel: "(11) 98451-0002", civil: "Casado(a)", imovel: "Cond. Solar das Palmeiras", unidade: "AP 504", valor: 420000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "15/01/2026" },
+            { id: "#003", nome: "Ana Beatriz Rocha", cpf: "103.315.444-13", email: "ana.rocha@email.com", tel: "(11) 98451-0003", civil: "Solteiro(a)", imovel: "Edifício Vista Mar", unidade: "AP 202", valor: 680000, modalidade: "Financiamento", banco: "Banco Itaú", data: "19/01/2026" },
+            { id: "#004", nome: "Rodrigo Mendes", cpf: "104.316.445-14", email: "rodrigo.mendes@email.com", tel: "(11) 98451-0004", civil: "Casado(a)", imovel: "Eco Park Condomínio", unidade: "AP 32", valor: 295000, modalidade: "Financiamento", banco: "Banco do Brasil", data: "22/01/2026" },
+            { id: "#005", nome: "Juliana Fernandes", cpf: "105.317.446-15", email: "juliana.f@email.com", tel: "(11) 98451-0005", civil: "Divorciado(a)", imovel: "Residencial Primavera", unidade: "AP 105", valor: 310000, modalidade: "Consórcio", banco: "Crédito Sim", data: "29/01/2026" },
+            { id: "#006", nome: "Ricardo Oliveira", cpf: "106.318.447-16", email: "ricardo.oliveira@email.com", tel: "(11) 98451-0006", civil: "Casado(a)", imovel: "Plaza Mayor Residence", unidade: "AP 401", valor: 450000, modalidade: "Financiamento", banco: "Santander", data: "02/02/2026" },
+            { id: "#007", nome: "Fernando Costa", cpf: "107.319.448-17", email: "fernando.costa@email.com", tel: "(11) 98451-0007", civil: "Solteiro(a)", imovel: "Vila do Sol Condomínio", unidade: "AP 12", valor: 285000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "05/02/2026" },
+            { id: "#008", nome: "Gabriel Santos", cpf: "108.320.449-18", email: "gabriel.santos@email.com", tel: "(11) 98451-0008", civil: "Casado(a)", imovel: "Golden Gate Towers", unidade: "AP 1203", valor: 590000, modalidade: "Financiamento", banco: "Bradesco", data: "11/02/2026" },
+            { id: "#009", nome: "Patrícia Lima", cpf: "109.321.450-19", email: "patricia.lima@email.com", tel: "(11) 98451-0009", civil: "Solteiro(a)", imovel: "Belo Horizonte Residence", unidade: "AP 802", valor: 375000, modalidade: "Financiamento", banco: "Banco Sicredi", data: "17/02/2026" },
+            { id: "#010", nome: "Lucas Souza", cpf: "110.322.451-20", email: "lucas.souza@email.com", tel: "(11) 98451-0010", civil: "Casado(a)", imovel: "Metropolitan Park", unidade: "AP 110", valor: 320000, modalidade: "Financiamento", banco: "Banco Inter", data: "20/02/2026" },
+            { id: "#011", nome: "Amanda Moreira", cpf: "111.323.452-21", email: "amanda.m@email.com", tel: "(11) 98451-0011", civil: "Solteiro(a)", imovel: "Alvorada Premium", unidade: "AP 303", valor: 490000, modalidade: "Financiamento", banco: "Itaú Unibanco", data: "25/02/2026" },
+            { id: "#012", nome: "Thiago Alves", cpf: "112.324.453-22", email: "thiago.alves@email.com", tel: "(11) 98451-0012", civil: "Casado(a)", imovel: "Horizonte Azul", unidade: "AP 511", valor: 365000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "01/03/2026" },
+            { id: "#013", nome: "Camila Ribeiro", cpf: "113.325.454-23", email: "camila.r@email.com", tel: "(11) 98451-0013", civil: "Solteiro(a)", imovel: "Condomínio Jardins", unidade: "AP 14A", valor: 510000, modalidade: "Financiamento", banco: "Banco Safra", data: "03/03/2026" },
+            { id: "#014", nome: "Bruno Carvalho", cpf: "114.326.455-24", email: "bruno.c@email.com", tel: "(11) 98451-0014", civil: "Casado(a)", imovel: "Residencial Bella Vista", unidade: "AP 102", valor: 345000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "07/03/2026" },
+            { id: "#015", nome: "Larissa Melo", cpf: "115.327.456-25", email: "larissa.melo@email.com", tel: "(11) 98451-0015", civil: "Solteiro(a)", imovel: "Edifício Vista Mar", unidade: "AP 301", valor: 710000, modalidade: "Financiamento", banco: "Banco Itaú", data: "10/03/2026" },
+            { id: "#016", nome: "Felipe Gabriel", cpf: "116.328.457-26", email: "felipe.g@email.com", tel: "(11) 98451-0016", civil: "Casado(a)", imovel: "Eco Park Condomínio", unidade: "AP 44", valor: 298000, modalidade: "Financiamento", banco: "Banco do Brasil", data: "12/03/2026" },
+            { id: "#017", nome: "Fernanda Nogueira", cpf: "117.329.458-27", email: "fernanda.n@email.com", tel: "(11) 98451-0017", civil: "Solteiro(a)", imovel: "Plaza Mayor Residence", unidade: "AP 102", valor: 460000, modalidade: "Financiamento", banco: "Santander", data: "15/03/2026" },
+            { id: "#018", nome: "Vinícius Teixeira", cpf: "118.330.459-28", email: "vinicius.t@email.com", tel: "(11) 98451-0018", civil: "Casado(a)", imovel: "Golden Gate Towers", unidade: "AP 904", valor: 585000, modalidade: "Financiamento", banco: "Bradesco", data: "19/03/2026" },
+            { id: "#019", nome: "Aline Cristina", cpf: "119.331.460-29", email: "aline.c@email.com", tel: "(11) 98451-0019", civil: "Divorciado(a)", imovel: "Belo Horizonte Residence", unidade: "AP 203", valor: 380000, modalidade: "Consórcio", banco: "Crédito Sim", data: "22/03/2026" },
+            { id: "#020", nome: "Daniel Augusto", cpf: "120.332.461-30", email: "daniel.a@email.com", tel: "(11) 98451-0020", civil: "Casado(a)", imovel: "Metropolitan Park", unidade: "AP 402", valor: 325000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "26/03/2026" },
+            { id: "#021", nome: "Bárbara Rossi", cpf: "121.333.462-31", email: "barbara.r@email.com", tel: "(11) 98451-0021", civil: "Solteiro(a)", imovel: "Alvorada Premium", unidade: "AP 104", valor: 495000, modalidade: "Financiamento", banco: "Banco Itaú", data: "28/03/2026" },
+            { id: "#022", nome: "André Luís", cpf: "122.334.463-32", email: "andre.l@email.com", tel: "(11) 98451-0022", civil: "Casado(a)", imovel: "Horizonte Azul", unidade: "AP 102", valor: 370000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "01/04/2026" },
+            { id: "#023", nome: "Carolina Ferraz", cpf: "123.335.464-33", email: "carol.ferraz@email.com", tel: "(11) 98451-0023", civil: "Solteiro(a)", imovel: "Condomínio Jardins", unidade: "AP 02B", valor: 520000, modalidade: "Financiamento", banco: "Bradesco", data: "05/04/2026" },
+            { id: "#024", nome: "Fábio Júnior", cpf: "124.336.465-34", email: "fabio.j@email.com", tel: "(11) 98451-0024", civil: "Casado(a)", imovel: "Residencial Bella Vista", unidade: "AP 404", valor: 360000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "08/04/2026" },
+            { id: "#025", nome: "Priscila Antunes", cpf: "125.337.466-35", email: "priscila.a@email.com", tel: "(11) 98451-0025", civil: "Solteiro(a)", imovel: "Edifício Vista Mar", unidade: "AP 502", valor: 695000, modalidade: "Financiamento", banco: "Santander", data: "11/04/2026" },
+            { id: "#026", nome: "Marcelo Vieira", cpf: "126.338.467-36", email: "marcelo.v@email.com", tel: "(11) 98451-0026", civil: "Casado(a)", imovel: "Cond. Solar das Palmeiras", unidade: "AP 102", valor: 415000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "14/04/2026" },
+            { id: "#027", nome: "Jéssica Toledo", cpf: "127.339.468-37", email: "jessica.t@email.com", tel: "(11) 98451-0027", civil: "Solteiro(a)", imovel: "Eco Park Condomínio", unidade: "AP 15", valor: 290000, modalidade: "Financiamento", banco: "Banco do Brasil", data: "18/04/2026" },
+            { id: "#028", nome: "Igor Guimarães", cpf: "128.340.469-38", email: "igor.g@email.com", tel: "(11) 98451-0028", civil: "Casado(a)", imovel: "Residencial Primavera", unidade: "AP 204", valor: 315000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "22/04/2026" },
+            { id: "#029", nome: "Letícia Duarte", cpf: "129.341.470-39", email: "leticia.d@email.com", tel: "(11) 98451-0029", civil: "Solteiro(a)", imovel: "Plaza Mayor Residence", unidade: "AP 602", valor: 470000, modalidade: "Financiamento", banco: "Banco Itaú", data: "25/04/2026" },
+            { id: "#030", nome: "Renan Lopes", cpf: "130.342.471-40", email: "renan.l@email.com", tel: "(11) 98451-0030", civil: "Casado(a)", imovel: "Vila do Sol Condomínio", unidade: "AP 05", valor: 280000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "28/04/2026" },
+            { id: "#031", nome: "Diego Brandão", cpf: "131.343.472-41", email: "diego.b@email.com", tel: "(11) 98451-0031", civil: "Solteiro(a)", imovel: "Golden Gate Towers", unidade: "AP 1502", valor: 620000, modalidade: "Financiamento", banco: "Banco Safra", data: "02/05/2026" },
+            { id: "#032", nome: "Tatiane Martins", cpf: "132.344.473-42", email: "tati.martins@email.com", tel: "(11) 98451-0032", civil: "Casado(a)", imovel: "Belo Horizonte Residence", unidade: "AP 401", valor: 370000, modalidade: "Consórcio", banco: "Crédito Sim", data: "05/05/2026" },
+            { id: "#033", nome: "Samuel Henrique", cpf: "133.345.474-43", email: "samuel.h@email.com", tel: "(11) 98451-0033", civil: "Solteiro(a)", imovel: "Metropolitan Park", unidade: "AP 304", valor: 330000, modalidade: "Financiamento", banco: "Banco Inter", data: "08/05/2026" },
+            { id: "#034", nome: "Debora Passos", cpf: "134.346.475-44", email: "debora.p@email.com", tel: "(11) 98451-0034", civil: "Casado(a)", imovel: "Alvorada Premium", unidade: "AP 501", valor: 510000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "12/05/2026" },
+            { id: "#035", nome: "Leonardo Cruz", cpf: "135.347.476-45", email: "leonardo.c@email.com", tel: "(11) 98451-0035", civil: "Solteiro(a)", imovel: "Horizonte Azul", unidade: "AP 204", valor: 360000, modalidade: "Financiamento", banco: "Banco do Brasil", data: "15/05/2026" },
+            { id: "#036", nome: "Vanessa Gomes", cpf: "136.348.477-46", email: "vanessa.g@email.com", tel: "(11) 98451-0036", civil: "Casado(a)", imovel: "Condomínio Jardins", unidade: "AP 11B", valor: 535000, modalidade: "Financiamento", banco: "Santander", data: "19/05/2026" },
+            { id: "#037", nome: "Christian Borges", cpf: "137.349.478-47", email: "christian.b@email.com", tel: "(11) 98451-0037", civil: "Solteiro(a)", imovel: "Residencial Bella Vista", unidade: "AP 203", valor: 350000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "22/05/2026" },
+            { id: "#038", nome: "Monique Sales", cpf: "138.350.479-48", email: "monique.s@email.com", tel: "(11) 98451-0038", civil: "Casado(a)", imovel: "Cond. Solar das Palmeiras", unidade: "AP 302", valor: 430000, modalidade: "Financiamento", banco: "Bradesco", data: "25/05/2026" },
+            { id: "#039", nome: "Murilo Benício", cpf: "139.351.480-49", email: "murilo.b@email.com", tel: "(11) 98451-0039", civil: "Solteiro(a)", imovel: "Edifício Vista Mar", unidade: "AP 101", valor: 670000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "28/05/2026" },
+            { id: "#040", nome: "Sabrina Sato", cpf: "140.352.481-50", email: "sabrina.s@email.com", tel: "(11) 98451-0040", civil: "Casado(a)", imovel: "Eco Park Condomínio", unidade: "AP 21", valor: 302000, modalidade: "Financiamento", banco: "Banco do Brasil", data: "01/06/2026" },
+            { id: "#041", nome: "Renato Aragão", cpf: "141.353.482-51", email: "renato.a@email.com", tel: "(11) 98451-0041", civil: "Solteiro(a)", imovel: "Residencial Primavera", unidade: "AP 402", valor: 320000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "03/06/2026" },
+            { id: "#042", nome: "Paolla Oliveira", cpf: "142.354.483-52", email: "paolla.o@email.com", tel: "(11) 98451-0042", civil: "Casado(a)", imovel: "Plaza Mayor Residence", unidade: "AP 303", valor: 455000, modalidade: "Financiamento", banco: "Banco Itaú", data: "05/06/2026" },
+            { id: "#043", nome: "Cauã Reymond", cpf: "143.355.484-53", email: "caua.r@email.com", tel: "(11) 98451-0043", civil: "Solteiro(a)", imovel: "Vila do Sol Condomínio", unidade: "AP 08", valor: 290000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "06/06/2026" },
+            { id: "#044", nome: "Giovanna Antonelli", cpf: "144.356.485-54", email: "giovanna.a@email.com", tel: "(11) 98451-0044", civil: "Casado(a)", imovel: "Golden Gate Towers", unidade: "AP 703", valor: 605000, modalidade: "Financiamento", banco: "Santander", data: "07/06/2026" },
+            { id: "#045", nome: "Lazaro Ramos", cpf: "145.357.486-55", email: "lazaro.r@email.com", tel: "(11) 98451-0045", civil: "Casado(a)", imovel: "Belo Horizonte Residence", unidade: "AP 504", valor: 385000, modalidade: "Financiamento", banco: "Bradesco", data: "08/06/2026" },
+            { id: "#046", nome: "Taís Araújo", cpf: "146.358.487-56", email: "tais.a@email.com", tel: "(11) 98451-0046", civil: "Casado(a)", imovel: "Metropolitan Park", unidade: "AP 201", valor: 340000, modalidade: "Consórcio", banco: "Crédito Sim", data: "09/06/2026" },
+            { id: "#047", nome: "Otaviano Costa", cpf: "147.359.488-57", email: "otaviano.c@email.com", tel: "(11) 98451-0047", civil: "Casado(a)", imovel: "Alvorada Premium", unidade: "AP 202", valor: 485000, modalidade: "Financiamento", banco: "Banco Itaú", data: "10/06/2026" },
+            { id: "#048", nome: "Flávia Alessandra", cpf: "148.360.489-58", email: "flavia.a@email.com", tel: "(11) 98451-0048", civil: "Casado(a)", imovel: "Horizonte Azul", unidade: "AP 401", valor: 380000, modalidade: "Financiamento", banco: "Caixa Econômica", data: "10/06/2026" },
+            { id: "#049", nome: "Mateus Solano", cpf: "149.361.490-59", email: "mateus.s@email.com", tel: "(11) 98451-0049", civil: "Solteiro(a)", imovel: "Condomínio Jardins", unidade: "AP 05A", valor: 540000, modalidade: "À Vista", banco: "Direto Incorporadora", data: "11/06/2026" },
+            { id: "#050", nome: "Camila Queiroz", cpf: "150.362.491-60", email: "camila.q@email.com", tel: "(11) 98451-0050", civil: "Solteiro(a)", imovel: "Residencial Bella Vista", unidade: "AP 302", valor: 355000, modalidade: "Financiamento", banco: "Bradesco", data: "11/06/2026" }
+        ];
+
+        // DATAS DISCRETAS PARA PRÉDIOS, EMPREENDIMENTOS E LOGS
+        const dadosPredios = [
+            { nome: "Residencial Bella Vista", local: "Zona Sul, Bloco A", total: 24, vendidas: 5, disp: 19, status: "Pronto para Morar" },
+            { nome: "Cond. Solar das Palmeiras", local: "Bairro Nobre, Bloco B", total: 16, vendidas: 3, disp: 13, status: "Fase de Acabamento" },
+            { nome: "Edifício Vista Mar", local: "Orla Marítima", total: 12, vendidas: 4, disp: 8, status: "Pronto para Morar" },
+            { nome: "Eco Park Condomínio", local: "Residencial Leste", total: 32, vendidas: 5, disp: 27, status: "Fundações Prontas" },
+            { nome: "Residencial Primavera", local: "Distrito Central", total: 20, vendidas: 4, disp: 16, status: "Estrutura Concluída" },
+            { nome: "Plaza Mayor Residence", local: "Avenida Principal", total: 16, vendidas: 4, disp: 12, status: "Pronto para Morar" }
+        ];
+
+        const dadosLogs = [
+            { tempo: "11/06/2026 08:54", user: "admin_gabriel", modulo: "Contratos", acao: "Aprovação de venda - Camila Queiroz (#050)", ip: "192.168.1.45" },
+            { tempo: "11/06/2026 08:12", user: "sistema_cron", modulo: "Faturamento", acao: "Verificação de relatórios mensais concluída", ip: "127.0.0.1" },
+            { tempo: "11/06/2026 07:30", user: "corretor_marcos", modulo: "Clientes", acao: "Cadastro de novo proponente: Mateus Solano", ip: "187.45.21.102" },
+            { tempo: "10/06/2026 17:40", user: "admin_gabriel", modulo: "Segurança", acao: "Alteração de privilégios de acesso do módulo de auditoria", ip: "192.168.1.45" },
+            { tempo: "10/06/2026 14:22", user: "gerente_ana", modulo: "Prédios", acao: "Unidade AP 302 mudada para status 'Vendida'", ip: "177.89.3.20" }
+        ];
+
+        // --- CONTROLO INTERRUPTOR DE ABAS ---
+        const botoesAbas = document.querySelectorAll('.tab-btn');
+        const conteudosAbas = document.querySelectorAll('.tab-content');
+
+        botoesAbas.forEach(botao => {
+            botao.addEventListener('click', () => {
+                botoesAbas.forEach(b => b.classList.remove('active'));
+                conteudosAbas.forEach(c => c.classList.remove('active'));
+
+                botao.classList.add('active');
+                const idAlvo = botao.getAttribute('data-target');
+                document.getElementById(idAlvo).classList.add('active');
+            });
+        });
+
+        // --- RENDERIZADORES DINÂMICOS DE TABELAS ---
+        function renderizarTodasAsTabelas() {
+            // 1. Aba Moradores
+            const corpoMoradores = document.getElementById("tabela-clientes-corpo");
+            let htmlMoradores = "";
+            dadosClientes.forEach(c => {
+                const iniciais = c.nome.substring(0, 2).toUpperCase();
+                htmlMoradores += `
+                    <tr class="linha-clicavel" onclick="abrirDetalhes('${c.id}')">
+                        <td><strong>${c.id}</strong></td>
+                        <td><div class="avatar-container"><div class="avatar-circle">${iniciais}</div><strong>${c.nome}</strong></div></td>
+                        <td>${c.cpf}</td><td>${c.email}</td><td>${c.tel}</td><td>${c.civil}</td>
+                        <td><small><i class="fa-solid fa-location-dot" style="color:#64748b; margin-right:4px;"></i> ${c.imovel}, ${c.unidade}</small></td>
+                    </tr>`;
+            });
+            corpoMoradores.innerHTML = htmlMoradores;
+
+            // 2. Aba Prédios e Unidades
+            const corpoPredios = document.getElementById("tabela-predios-corpo");
+            let htmlPredios = "";
+            dadosPredios.forEach(p => {
+                let badgeCor = p.status === "Pronto para Morar" ? "badge-verde" : "badge-azul";
+                htmlPredios += `
+                    <tr>
+                        <td><strong><i class="fa-solid fa-building" style="color:#3b82f6; margin-right:6px;"></i> ${p.nome}</strong></td>
+                        <td>${p.local}</td><td>${p.total} Unidades</td><td>${p.vendidas}</td><td>${p.disp}</td>
+                        <td><span class="status-badge ${badgeCor}">${p.status}</span></td>
+                    </tr>`;
+            });
+            corpoPredios.innerHTML = htmlPredios;
+
+            // 3. Aba Contratos (Lista Completa Clientes)
+            const corpoContratos = document.getElementById("tabela-contratos-corpo");
+            let htmlContratos = "";
+            dadosClientes.forEach(c => {
+                htmlContratos += `
+                    <tr class="linha-clicavel" onclick="abrirDetalhes('${c.id}')">
+                        <td><span style="font-family:monospace; color:#3b82f6; font-weight:600;">CNT-2026-${c.id.replace('#','')}</span></td>
+                        <td><strong>${c.nome}</strong></td>
+                        <td><span class="badge-unidade">${c.unidade}</span> - ${c.imovel}</td>
+                        <td style="color:#22c55e; font-weight:600;">${c.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
+                        <td><small><i class="fa-solid fa-credit-card"></i> ${c.modalidade}</small></td>
+                        <td>${c.data}</td>
+                    </tr>`;
+            });
+            corpoContratos.innerHTML = htmlContratos;
+
+            // 4. Aba Logs
+            const corpoLogs = document.getElementById("tabela-logs-corpo");
+            let htmlLogs = "";
+            dadosLogs.forEach(l => {
+                htmlLogs += `
+                    <tr>
+                        <td style="font-family:monospace; color:#64748b;">${l.tempo}</td>
+                        <td><i class="fa-solid fa-user-shield" style="font-size:12px; margin-right:4px; color:#a855f7;"></i> ${l.user}</td>
+                        <td><span class="badge-unidade" style="background:#1e293b;">${l.modulo}</span></td>
+                        <td style="color:#cbd5e1;">${l.acao}</td>
+                        <td style="font-family:monospace; font-size:12px; color:#64748b;">${l.ip}</td>
+                    </tr>`;
+            });
+            corpoLogs.innerHTML = htmlLogs;
+        }
+
+        // --- POPUP DETALHES ---
+        const modal = document.getElementById("modal-cliente");
+
+        function abrirDetalhes(idCliente) {
+            const cliente = dadosClientes.find(c => c.id === idCliente);
+            if(cliente) {
+                document.getElementById("modal-avatar").innerText = cliente.nome.substring(0, 2).toUpperCase();
+                document.getElementById("modal-nome").innerText = cliente.nome;
+                document.getElementById("modal-id").innerText = cliente.id;
+                document.getElementById("modal-cpf").innerText = cliente.cpf;
+                document.getElementById("modal-civil").innerText = cliente.civil;
+                document.getElementById("modal-email").innerText = cliente.email;
+                document.getElementById("modal-telefone").innerText = cliente.tel;
+                document.getElementById("modal-imovel").innerText = cliente.imovel;
+                document.getElementById("modal-unidade").innerText = cliente.unidade;
+                document.getElementById("modal-valor").innerText = cliente.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                document.getElementById("modal-banco").innerText = `${cliente.modalidade} (${cliente.banco})`;
+
+                modal.classList.add("mostrar");
+            }
+        }
+
+        document.getElementById("fechar-modal").addEventListener("click", () => modal.classList.remove("mostrar"));
+        window.addEventListener("click", (e) => { if(e.target === modal) modal.classList.remove("mostrar"); });
+
+        document.addEventListener("DOMContentLoaded", renderizarTodasAsTabelas);
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ImobiTech</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <i class="fa-solid fa-building-columns"></i>
+                <h2>ImobiTech <span>Manager</span></h2>
+                <p>Seja bem-vindo. Faça login para acessar o sistema.</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="tipo_usuario"><i class="fa-solid fa-user-shield"></i> Tipo de Acesso</label>
+                    <select id="tipo_usuario" required>
+                        <option value="funcionario">Funcionário (Corretor / Admin)</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> E-mail</label>
+                    <input type="email" id="email" placeholder="thiago@imobi.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="senha"><i class="fa-solid fa-lock"></i> Senha</label>
+                    <input type="password" id="senha" placeholder="Digite sua senha" required>
+                </div>
+
+                <div id="error-message" style="display: none; color: #ef4444; font-size: 13px; margin-bottom: 15px; font-weight: 600;">
+                    <i class="fa-solid fa-triangle-exclusion"></i> E-mail ou senha incorretos!
+                </div>
+
+                <div class="login-utils">
+                    <label><input type="checkbox"> Lembrar-me</label>
+                    <a href="#">Esqueceu a senha?</a>
+                </div>
+
+                <button type="submit" class="btn-login">Entrar no Sistema</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Impede o recarregamento incorreto da página
+
+            const email = document.getElementById('email').value.trim();
+            const senha = document.getElementById('senha').value;
+            const errorBox = document.getElementById('error-message');
+
+            // Credenciais válidas para teste local
+            if (email === 'thiago@imobi.com' && senha === '123456') {
+                errorBox.style.display = 'none';
+                
+                // Grava as informações para a Dashboard exibir no topo
+                localStorage.setItem('usuarioLogado', 'Thiago Corretor');
+                localStorage.setItem('nivelAcesso', 'Nível: Corretor');
+                
+                // Redireciona na hora para a sua Dashboard de forma segura
+                window.location.replace('./index.html');
+            } 
+            else if (email === 'admin@imobi.com' && senha === 'admin123') {
+                errorBox.style.display = 'none';
+                localStorage.setItem('usuarioLogado', 'Ricardo Administrador');
+                localStorage.setItem('nivelAcesso', 'Nível: Administrador');
+                
+                window.location.replace('./index.html');
+            }
+            else {
+                // Se errar a senha, mostra o alerta vermelho
+                errorBox.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+
+    <style>
+        .container {
+            position:relative;
+            width: 80%;
+            margin: auto;
+        }
+
+        .meuSlide img{
+            width: 100%;
+        }
+
+        .numero{
+            position:absolute;
+            top: 0px; 
+            left:0px; 
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px; 
+            
+        }
+
+        .texto{
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            color: #f2f2f2;
+            font-size: 15px;
+            /* padding: 8px 12px;
+            box-sizing: border-box; */
+            margin-bottom: 12px;
+        }
+
+        .anterior, .proximo{
+            position: absolute;
+            top: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 16px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            border-radius: 0 3px 3px 0;
+            transition: background-color 0.6s;
+            user-select: none;
+        }   
+
+        .proximo{
+            right: 0px;
+            border-radius: 3px 0 0 3px;
+        }  
+        
+        .anterior:hover, .proximo:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .ponto {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .ativo,.ponto:hover {
+            background-color: #717171;
+        }
+
+        .navegacao {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .meuSlide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="meuSlide">
+            <div class="numero">1 / 4</div>
+            <img src="midias/img01.jpg" alt="Rocha e Floresta">
+            <div class="texto">Legenda 1</div>
+        </div>
+        <div class="meuSlide">
+            <div class="numero">2 / 4</div>
+            <img src="midias/img02.jpg" alt="Montanhas com neve">
+            <div class="texto">Legenda 2</div>
+        </div>
+        <div class="meuSlide">
+            <div class="numero">3 / 4   </div>
+            <img src="midias/img03.jpg" alt="Montanhas, rio e estrada">
+            <div class="texto">Legenda 3</div>
+        </div>
+        <div class="meuSlide">
+            <div class="numero">4 / 4</div>
+            <img src="midias/img04.jpg" alt="Aurora Boreal">
+            <div class="texto">Legenda 4    </div>
+        </div>
+        <a class="anterior" onclick="avancarSlide(-1)">&#10094;</a>
+        <a class="proximo" onclick="avancarSlide(1)">&#10095;</a>
+    </div>
+
+    <!-- div>span.ponto*4 -->
+    <div class="navegacao">
+        <span class="ponto" onclick="slideAtual(0)"></span>
+        <span class="ponto" onclick="slideAtual(1)"></span>
+        <span class="ponto" onclick="slideAtual(2)"></span>
+        <span class="ponto" onclick="slideAtual(3)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        mostrarSlide(slideIndex);
+
+        function avancarSlide(n){
+            
+            mostrarSlide(slideIndex += n);
+        }
+function slideAtual(n){
+    slideIndex = n;
+    mostrarSlide(slideIndex)
+}
+
+        function mostrarSlide(n){
+            let i;
+            let slides = document.getElementsByClassName("meuSlide");
+             let ponto = document.getElementsByClassName("ponto");
+
+            if(n > slides.length - 1){
+                slideIndex = 0;
+            }
+            
+            if(n < 0){
+                slideIndex = slides.length - 1;
+            }
+            // Oculta todos os slides
+            for(i = 0; i < slides.length; i++){
+                slides[i].style.display = "none";
+            }
+
+        
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+            //Mostra slide desejado
+            slides[slideIndex].style.display = "block";
+        }
+    </script>
+    
+</body>
+</html>

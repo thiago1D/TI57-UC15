@@ -1,0 +1,236 @@
+/* ================= CONFIGURAÇÕES GERAIS ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+.app-layout {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* ================= MENU LATERAL (SIDEBAR) ================= */
+.sidebar {
+    width: 260px;
+    background-color: #0f172a; /* Azul escuro quase preto */
+    color: #f8fafc;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding-left: 8px;
+}
+
+.sidebar-brand i {
+    font-size: 24px;
+    color: #3b82f6; /* Ícone Azul */
+}
+
+.sidebar-brand h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.sidebar-brand h2 span {
+    color: #64748b;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-grow: 1;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #94a3b8; /* Cor cinza do texto inativo */
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+/* Botão ou Aba Ativa */
+.sidebar-menu a.active {
+    background-color: #1e293b; /* Fundo levemente mais claro */
+    color: #ffffff;
+    box-shadow: inset 4px 0 0 #3b82f6; /* Detalhe azul na borda esquerda */
+}
+
+/* Botão Sair Vermelho */
+.sidebar-menu .menu-logout {
+    margin-top: auto;
+    color: #ef4444;
+}
+
+.sidebar-menu .menu-logout:hover {
+    background-color: #7f1d1d;
+    color: #ffffff;
+}
+
+/* ================= PAINEL DE CONTEÚDO DA DIREITA ================= */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f8fafc;
+    overflow-y: auto;
+}
+
+/* BARRA SUPERIOR OPERACIONAL */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.page-title h1 {
+    font-size: 28px;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.page-title p {
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-details {
+    text-align: right;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    display: block;
+}
+
+.user-role {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.user-avatar {
+    font-size: 36px;
+    color: #64748b;
+}
+
+/* CONTROLE DE VISIBILIDADE DAS ABAS */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ================= CARDS E MÉTRICAS ================= */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.card-icon.blue { background-color: #eff6ff; color: #3b82f6; }
+.card-icon.green { background-color: #f0fdf4; color: #22c55e; }
+.card-icon.orange { background-color: #fff7ed; color: #f97316; }
+
+.card-data h3 {
+    font-size: 24px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.card-data p {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* CAIXA DE CONTEXTO / RESUMO INFERIOR */
+.info-box-dashboard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    border-left: 4px solid #3b82f6;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.info-box-dashboard h3 {
+    font-size: 15px;
+    color: #0f172a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.info-box-dashboard p {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+}

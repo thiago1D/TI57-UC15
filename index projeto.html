@@ -1,0 +1,38 @@
+<script>
+        const usuario = localStorage.getItem('usuarioLogado');
+        const nivel = localStorage.getItem('nivelAcesso');
+
+        if (!usuario) {
+            // CORREÇÃO: Se não achar a sessão, volta de forma segura para o login local
+            window.location.href = './login.html';
+        } else {
+            document.querySelector('.user-name').innerText = usuario;
+            document.querySelector('.user-role').innerText = nivel;
+        }
+
+        // LOGICA DE ALTERAÇÃO DE ABAS
+        const buttons = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+        const mainTitle = document.getElementById('current-tab-title');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                contents.forEach(content => content.classList.remove('active'));
+                const targetTab = button.getAttribute('data-tab');
+                document.getElementById(targetTab).classList.add('active');
+
+                mainTitle.innerText = button.innerText.trim();
+            });
+        });
+
+        // LOGOUT
+        document.querySelector('.menu-logout').addEventListener('click', (e) => {
+            localStorage.clear();
+        });
+    </script>
+
+  

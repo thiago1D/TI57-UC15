@@ -147,20 +147,59 @@ input[type="reset"]:hover {
 
     </style>
     <script>
-        function versenha() {
-        document.getElementById("senha").Type= "text;"
+        function verSenha() {
+       
 
-        let senha= document.getElementById("senha");
-        let olho= document.getElementById("olho");
-        if (senha.Type == "password") {
-            senha.Type = "text";
-            olho. classList.replace("bi-eye", "bi-eye")
+        let senha = document.getElementById("senha");
+        let olho = document.getElementById("olho");
+        if (senha.type == "password") {
+            senha.type = "text";
+            olho.classList.replace("bi-eye", "bi-eye")
         } else {
-            senha.Type = "password";
+            senha.type = "password";
             olho.classList.replace("bi-eye-slash", "bi-eye") ;
         } 
     }
+        function senhaforte(){
+        //declara a variavel senha e atribui o valor do campo da senha
+        let senha = document.getElementById("senha").value;
 
+        //declara a variavel testenum e atribui uma expressao regular que verifica se a senha cotem pelo me menos um numero 
+        let testNum = /^(?=.*\d)/;
+        let testMin = /^(?=.*[a-z])/;
+        let testMai = /^(?=.*[a-z])/;
+        let testEsp = /^(?=.*[@$!%*?&])/;
+        let testTam = /^.{8,}$/;
+        let mensagem = "";
+
+        //verifica se a senha nao corrresponde ao teste ao testenum, ou seja, se nao contem pelo menso um numero
+        if (!senha.match(testNum)){
+            mensagem = "<br>a senha deve conter pelo menios um numero.";
+        }
+        if (!senha.match(testMin)){
+        mensagem += "<br>a senha deve conter pelo menos uma letra minuscula.";
+        }
+        
+        if (!senha.match(testMai)){
+        mensagem += "<br>a senha deve conter pelo menso uma letra minuscula.";
+        }
+        
+        if (!senha.match(testEsp)){
+        mensagem += "<br>a senha deve conter pelo menos um caractere especial.";
+        }
+
+        if (!senha.match(testTam)){
+        mensagem += "<br>a senha deve ter pelo menos 8 caracteres.";
+        }
+        document.getElementById("menssagem-senha").innerHTML = mensagem;
+        if(mensagem ==""){
+            document.getElementById("senha2").disabled = false;
+        }else {
+            document.getElementById("senha2").disabled = true;
+        }
+        
+    
+    }
 
 
     </script>
@@ -184,8 +223,12 @@ input[type="reset"]:hover {
             <label for="professor">Professor</label>
             <br>
             <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha">
-            <button type="button" onclick="versenha()" id="olho" class="bi bi-eye"></button>
+            <input onkeyup="senhaforte()" type="password" name="senha" id="senha" placeholder="senha"> 
+            <button type="button" onclick="verSenha()" id="olho" class="bi bi-eye"></button>
+            <p>
+                <span id="menssagem-senha"></span>
+            </p>
+            <input onkeyup="senhaigual()" type="password" id="senha2" disabled>
         </fieldset>
 
         <fieldset>
@@ -202,7 +245,7 @@ input[type="reset"]:hover {
         </fieldset>
 
         <input type="reset" value="Limpar">
-        <input type="submit" value="Cadastrar">
+        <input type="submit" value="Cadastrar" disabled id="enviar">
     </form>
 </body>
 </html>
