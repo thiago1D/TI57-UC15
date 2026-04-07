@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplos de javacript</title>
+</head>
+<style>
+    .slide{
+        background-color: rgb(16, 116, 82);
+        color: white;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+    }
+</style>
+</header>
+
+<body>
+    <div class="slide">0</div>
+    <div class="slide">1</div>
+    <div class="slide">2</div>
+    <div class="slide">3</div>
+
+    <button onclick="oculta1()">ocultar slide</button>
+    <!-- <button onclick="mostra0()">mostrar slide 0</button>
+    <button onclick="mostra1()">mostrar slide 1</button>
+    <button onclick="mostra2()">mostrar slide 2</button>
+    <button onclick="mostra3()">mostrar slide 3</button> -->
+<!-- <button onclick="oculta1()">ocultar slide</button> -->
+
+    <!-- <button onclick="oculta1,2()">ocultar slide</button> -->
+    <button onclick="mostra(1)">mostrar slide 0</button>
+    <button onclick="mostra(2)">mostrar slide 1</button>
+    <button onclick="mostra(3)">mostrar slide 2</button>
+    <button onclick="mostra(4)">mostrar slide 3</button>
+
+    <button onclick="incrementa(-1)">mostrar anterior</button>
+<button onclick="incrementa(1)">mostrar proximo</button>
+
+
+    <script>
+        function oculta1(){
+            // document.getElementsByClassName("slide")[0].style.display = "none";
+            // document.getElementsByClassName("slide")[1].style.display = "none";
+            // document.getElementsByClassName("slide")[2].style.display = "none";
+            // document.getElementsByClassName("slide")[3].style.display = "none";
+
+            // let slide = document.getElementsByClassName("slide");
+            //slide[0].style.display = "none"
+            //slide[1].style.display = "none"
+            //slide[2].style.display = "none"
+            //slide[3].style.display = "none"
+
+            let slide = document.getElementsByClassName("slide");
+            for(let i = 0; i < 4; i = i +1){
+                slide[i].style.display = "none"
+                
+
+            }
+        }
+        // function mostra0(){
+        //     let slide = document.getElementsByClassName("slide")
+        //     slide[0].style.display = "block";
+        // }
+
+        
+        // function mostra1(){
+        //     let slide = document.getElementsByClassName("slide")
+        //     slide[1].style.display = "block";
+        // }
+           
+        
+        // function mostra2(){
+        //     let slide = document.getElementsByClassName("slide")
+        //     slide[2].style.display = "block";
+        // }
+
+        
+        // function mostra3(){
+        //     let slide = document.getElementsByClassName("slide")
+        //     slide[3].style.display = "block";
+        // }
+
+
+
+        function mostra(n){
+            indice = n;
+            let slide = document.getElementsByClassName("slide")
+            for(let i = 0; i < 4; i = i +1){
+                slide[i].style.display = "none"
+
+            slide[indice].style.display = "block";
+            
+            }
+    }
+    
+    let indice = 0;
+    mostra(indice);
+
+    function incrementa(n){
+        indice = indice  +n;
+        if(indice > 3){
+            indice = 0;
+        }
+        if(indice < 0){
+            indice = 3
+        }
+        mostra(indice)
+    }
+    
+        
+    </script>
+
+</body>
+</html>

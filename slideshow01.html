@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideshow</title>
+
+    <style>
+        
+        .container {
+            position: relative;
+            width: 50%;
+            margin: auto;
+            
+        }
+
+        .meuslide img {
+            width: 100%;
+           
+        }
+        
+        .numero {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            
+        }
+
+        .texto {
+           
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            color: #f2f2f2;
+            font-size: 15px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+
+        }
+        .anterior, .proximo{
+            position: absolute;
+            top: 50%;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 16px;
+            transform: translateY(-50px);
+            cursor: pointer;
+            border-radius:  0 3px 3px 0;
+            transition: background-color 0,6s ;
+            user-select: none;
+        }
+
+        .proximo{
+            right: 0px;
+        }
+        .anterior:hover, .proximo:hover {
+  background-color: rgba(0,0,0,0.8);
+
+        }
+
+        .ponto{
+            cursor: pointer;
+            height:15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: backgroud-color 0.6s ease;
+
+        }
+
+        .navegacao{
+            text-align: center;
+            padding: 8px;
+        }
+        .meuslide{
+            display: none;
+        }
+
+
+
+     
+
+
+            
+        
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="meuslide">
+            <div class="numero">1 / 4</div>
+            <img src="midias/img01.jpg" alt="rocha e floresta">
+            <div class="texto">legenda 1</div>
+</div>
+        
+
+        <div class="meuslide">
+            <div class="numero"> 2/ 4</div>
+            <img src="midias/img02.jpg" alt="montanha com neve">
+            <div class="texto">legenda 1</div>
+</div>
+
+        <div class="meuslide">
+            <div class="numero">3 / 4</div>
+            <img src="midias/img03.jpg" alt="montanha, rio e estrada">
+            <div class="texto">legenda 1</div>
+</div>
+
+        <div class="meuslide">
+            <div class="numero">4 / 4</div>
+            <img src="midias/img04.jpg" alt="auria boreal">
+            <div class="texto">legenda 1</div>
+    </div>
+    <a class="anterior" onclick="avancarslide(-1)">&#10094;</a>
+    <a class="proximo" >&#10095;</a>
+    <div>
+
+<div class="navegacao">
+    <div><span class="ponto"></span>
+        <span class="ponto"></span>
+        <span class="ponto"></span>
+        <span class="ponto"></span>
+    </div>
+    <script>
+        let slideindex =0
+        mostrarslide(slideindex);
+
+        function avancarslide(n) {
+            mostrarslide(slideindex += n);
+        }
+
+        function mostrarslide(n){
+            let i;
+            let slides =document.getElementsByClassName("meuslide");
+            for(i = 0; i < slides.length; i++){
+
+            }
+            slides[n].style.display = "block";
+            if(n > slides.length - 1){}
+            
+        }
+
+        
+
+    </script>
+
+    
+</body>
+</html>
+

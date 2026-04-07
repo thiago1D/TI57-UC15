@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplos de javascript</title>
+</head>
+<body>
+    
+</body>
+
+<h1>passagem de parametros nas funçoes</h1>
+<p id="teste">ola, mundo</p>
+<button onclick="verde()">verde</button>
+<button onclick="vermelho()">vermelho</button>
+<button onclick="azul()">azul</button>
+<button onclick="alteracor('ciano', 'lightcoral')">ciano</button>
+
+<script>
+
+
+    function verde() {
+        document.getElementById("teste").style.color = "green";
+
+    }
+    function vermelho(){ 
+        document.getElementById("teste").style.color = "red";
+
+    }
+    function azul(){
+         document.getElementById("teste").style.color = "blue";
+        
+    }
+    function alteracor(cor,fundo){
+        document.getElementById("teste").style.backgroundColor = fundo;
+
+    }
+
+
+</script>
+<h2>exemplos 2</h2>
+
+<form >
+    <input oninput="alteracor2(this.value)" type="color" id="cortexto">
+</form>
+<p id="teste2">ola,mundo</p>
+<script>
+
+    function alteracor2(cor) {
+        document.getElementById("teste2").style.color = cor;
+    }
+</script>
+<h2>exemplos 3</h2>
+<form>
+    <input type="range" oninput="pegavalor(this.value)">
+    <input type="text" id="valor" readonly >
+</form>
+
+<script>
+    function pegaValor(num) {
+        document.getElementById("valor").value = num;
+    
+    }
+</script>
+
+<h1>estruturas de repetiçao</h1>
+
+<button onclick="repeticao()">excutar repetiçao</button>
+
+<script>
+    function repeticao(){
+      let= resposta = prompt("voce tem uma divida. vai pagar? Responda S ou N");
+      while(resposta != "S" && resposta != "s") {
+        resposta = prompt("voce tem uma divida. vai pagar? Resposta S ou N");
+
+      }
+      alert("obrigado por pagar sua divida!");
+
+    }
+</script>
+
+<h2>for</h2>
+
+<button onclick="repeticao2()">executar repetiçao</button>
+<ul id="lista"></ul>
+
+<script>
+    function repeticao2(){
+        let conteudo = "";
+            for(let i = 0; i < 5; i++) {
+                conteudo += "<li>" + i + "</li>";
+
+            }
+            document.getElementById("lista").innerHTML = conteudo;
+    }
+</script>
+
+<h1>vetores (ou arrays)</h1>
+<ul id="lista2">
+
+</ul>
+<script>
+    let frutas = ["maça", "banana", "laranja", "uva",];
+    document.getElementById("lista2").innerHTML
+
+</script>
+</html>
