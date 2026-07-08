@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyPass - Console de Operações</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-plane-departure brand-icon"></i>
+                <h2>SkyPass <span>Manager</span></h2>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-plane"></i> Painel de Voos</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-users"></i> Passageiros</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Logs de Escaneamento</a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="menu-item logout"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+            </div>
+        </aside>
+
+        <div class="content-wrapper">
+            
+            <header class="top-header">
+                <div class="system-status">
+                    <span class="badge-online"><i class="fa-solid fa-circle"></i> Terminal Conectado (SIA-SPO)</span>
+                </div>
+                <div class="top-header-info">
+                    <span><i class="fa-solid fa-headset"></i> Suporte Técnico</span>
+                    <strong>PT-BR</strong>
+                </div>
+            </header>
+
+            <main class="main-container">
+                
+                <section class="panel-section profile-panel">
+                    <div class="panel-header">
+                        <h3><i class="fa-solid fa-id-card"></i> Ficha Cadastral e Perfil do Usuário</h3>
+                        <span class="panel-subtitle">Dados de segurança integrados com a ANAC / IATA</span>
+                    </div>
+                    
+                    <div class="profile-summary">
+                        <div class="avatar-mock"><i class="fa-solid fa-user-gear"></i></div>
+                        <div>
+                            <h4 id="user-nome">Carregando...</h4>
+                            <p id="user-cargo">Patente: Comandante de Linha Aérea</p>
+                        </div>
+                    </div>
+
+                    <div class="info-grid" id="perfil-info-grid">
+                        </div>
+                </section>
+
+                <div class="right-column">
+                    
+                    <section class="panel-section">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-plane-flying"></i> Monitor de Voos em Tempo Real</h3>
+                        </div>
+                        <div class="flight-list" id="flight-board">
+                            </div>
+                    </section>
+
+                    <section class="panel-section">
+                        <div class="panel-header">
+                            <h3><i class="fa-solid fa-barcode"></i> Histórico de Escaneamento (Logs do Sistema)</h3>
+                        </div>
+                        <div class="table-container">
+                            <table class="log-table">
+                               <thead>
+                                   <tr>
+                                       <th>Horário/Data</th>
+                                       <th>Operador</th>
+                                       <th>Ação / Evento</th>
+                                       <th>Terminal</th>
+                                       <th>Status do Gate</th>
+                                   </tr>
+                               </thead>
+                               <tbody id="log-board">
+                                   </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                </div>
+
+            </main>
+
+            <footer class="airline-footer">
+                <p>&copy; 2026 SkyPass Linhas Aéreas S.A. | Divisão de Sistemas de Solo Integrados | Criptografia AES-256 ativada.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
